@@ -5,6 +5,7 @@ description: ''
 
 ## Introduction
 
+<p style="text-align:justify;">
 Recent advances at the intersection of language and vision have made incredible
 progress in tasks such as image captioning, visual question answering and visual dialog.
 The challenge now is to extend this progress to embodied agents that move and interact
@@ -16,6 +17,7 @@ We will then discuss some of the current and upcoming challenges of combining
 language, vision, and actions, and discuss some recently-released interactive 3D
 simulation environments that can be used for this purpose (such as House3D, Home,
 Minos, Matterport3D Simulator, Gibson, Thor and Chalet).
+</p>
 
 ## Presenters
 
