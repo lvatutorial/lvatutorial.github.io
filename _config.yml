@@ -1,0 +1,11 @@
+theme: jekyll-theme-cayman
+title: Connecting Language and Vision to Actions
+description: "ACL 2018 Tutorial"
+google_analytics:
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md

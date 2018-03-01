@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Open Graph Related Stuff-->
+    <meta property="og:title" content="{{ site.title }}"/>
+    <meta property="og:url" content="{{ site.url }}"/>
+    <meta name='og:description' content='{{ site.description }}'/>
+
+    <!--Twitter Card Stuff-->
+    <meta name='twitter:card' content='summary'/>
+    <meta name='twitter:title' content='{{ site.title }}'/>
+    <!-- <meta name='twitter:image' content='https://url/to/blah.jpg'/> -->
+    <meta name='twitter:url' content='{{ site.url }}'/>
+    <meta name='twitter:description' content='{{ site.description }}'/>
+
+    <meta name="theme-color" content="#157878">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  </head>
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+    body, * {
+      font-family: "Roboto";
+      font-weight: 300;
+    }
+    .main-content {
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+    .small {
+      font-size: 0.65rem;
+    }
+    .small ol {
+      padding-left: 0.5rem;
+    }
+    .im-speaker-pic { border-radius: 50%; float: middle; max-width:100%; }
+    .speaker-bio { text-align:justify; width:80%}
+    .main-content table th { font-weight: normal; border: 0px; padding:.5em; valign: middle}
+    table.organizer-pics-four td { font-weight: normal; border: 0px; width:25%; vertical-align: center; text-align:center; }
+  </style>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">
+        ACL 2018 Tutorial
+      </h2>
+      {% if site.github.is_project_page %}
+        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+      {% endif %}
+      {% if site.show_downloads %}
+        <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
+        <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
+      {% endif %}
+    </section>
+
+    <section class="main-content">
+      {{ content }}
+
+      <footer class="site-footer">
+        {% if site.github.is_project_page %}
+          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+        {% endif %}
+        <span class="site-footer-credits">
+          ACL 2018 Tutorial on Connecting Language and Vision to Actions <br>
+        </span>
+      </footer>
+    </section>
+
+    {% if site.google_analytics %}
+      <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+
+  </body>
+</html>
