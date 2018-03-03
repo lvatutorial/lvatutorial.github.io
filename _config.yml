@@ -1,7 +1,7 @@
 theme: jekyll-theme-cayman
 title: Connecting Language and Vision to Actions
 description: "ACL 2018 Tutorial"
-google_analytics:
+google_analytics: UA-114990781-1
 
 # Exclude these files from your production _site
 exclude:
