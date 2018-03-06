@@ -6,17 +6,22 @@ description: ''
 ## Introduction
 
 <p style="text-align:justify;">
-Recent advances at the intersection of language and vision have made incredible
-progress in tasks such as image captioning, visual question answering and visual dialog.
-The challenge now is to extend this progress to embodied agents that move and interact
-with their visual environments. This tutorial will provide a comprehensive yet accessible
-introduction to the key innovations that have driven progress in language and vision
-modeling (such as multi-modal pooling, visual and co-attention, dynamic network
-composition, methods for incorporating external knowledge and cooperative/adversarial games).
-We will then discuss some of the current and upcoming challenges of combining
-language, vision, and actions, and discuss some recently-released interactive 3D
-simulation environments that can be used for this purpose (such as House3D, Home,
-Minos, Matterport3D Simulator, Gibson, Thor and Chalet).
+Recent advances at the intersection of natural language processing and computer vision have
+made incredible progress, from being able to generate natural language descriptions of images
+and videos, to answering questions about them, to even holding free-form conversations
+about visual content! The challenge now is to extend this progress to embodied agents that
+take actions and interact with their visual environments.
+</p>
+
+<p style="text-align:justify;">
+This tutorial will provide a comprehensive yet accessible introduction to the key
+innovations that have driven progress in language and vision modeling (such as
+multi-modal pooling, visual and co-attention, dynamic network composition,
+methods for incorporating external knowledge and cooperative/adversarial games).
+We will then discuss some of the challenges in building models for tasks that combine
+language, vision, and actions, and discuss recently-released interactive 3D
+environments that can be used for these (such as House3D, HoME,
+MINOS, Matterport3D Simulator, Gibson, Thor &amp; Chalet).
 </p>
 
 ## Presenters
