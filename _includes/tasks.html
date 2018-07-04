@@ -1,0 +1,183 @@
+<script type="text/javascript" src="assets/js/vis.min.js"></script>
+
+<script type="text/javascript">
+  var data = null;
+  var graph = null;
+
+  // Called when the Visualization API is loaded.
+  window.onload = function drawVisualization() {
+  
+    // create the data table.
+    data = new vis.DataSet();
+    
+    var dataArray = [
+      { cat: 'Image Captioning', text:'Flickr 8K dataset', conf:'JAIR 2013',
+        url:'http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/KCCA.html', 
+        x: 1.5, y: 1.5, z: 0.1, style: 2013, filter:1 },
+      { cat: 'Image Captioning', text:'Flickr 30K dataset', conf:'TACL 2014',
+        url:'http://shannon.cs.illinois.edu/DenotationGraph/', 
+        x: 1.5, y: 1.5, z: 0.2, style: 2014, filter:3 },
+      { cat: 'Referring Expressions', text:'ReferItGame dataset', conf:'EMNLP 2014',
+        url:'http://tamaraberg.com/referitgame/',
+        x: 1.5, y: 1.5, z: 0.3, style: 2014, filter:4 },
+      { cat: 'Image Captioning', text: 'COCO Captions dataset', conf:'2015', 
+        url:'http://cocodataset.org/',
+        x: 1.5, y: 1.5, z: 0.4, style: 2015, filter:5 },
+      { cat: 'Visual Question Answering', text:'VQA dataset', conf:'ICCV, 2015', 
+        url: 'http://www.visualqa.org/',
+        x: 1.5, y: 1.5, z: 0.5, style: 2015, filter:6 },
+      { cat: 'Referring Expressions', text: 'Google RefExp dataset', conf:'CVPR 2016',
+        url: 'https://github.com/mjhucla/Google_Refexp_toolbox',  
+        x: 1.5, y: 1.5, z: 0.6, style: 2016, filter:10 },
+      { cat: 'Visual Question Answering', text:'VQA v2 dataset', conf:'CVPR 2017', 
+        url: 'http://www.visualqa.org/', 
+        x: 1.5, y: 1.5, z: 0.7, style: 2017, filter:11 },
+      { cat: 'Video Description', text: 'MPII Movie Description dataset', conf: 'CVPR 2015', 
+        url: 'https://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/research/vision-and-language/mpii-movie-description-dataset/',
+        x: 2.5, y: 1.5, z: 0.1, style: 2015, filter:7 },
+      { cat: 'Video Question Answering', text: 'Movie QA dataset', conf: 'CVPR 2016',
+        url: 'http://movieqa.cs.toronto.edu/home/',  
+        x: 2.5, y: 1.5, z: 0.2, style: 2016, filter:8 },
+      { cat: 'Video Description', text: 'MSR-VTT dataset', conf: 'CVPR 2016',
+        url: 'https://www.microsoft.com/en-us/research/publication/msr-vtt-a-large-video-description-dataset-for-bridging-video-and-language/',  
+        x: 2.5, y: 1.5, z: 0.3, style: 2016, filter:9 },
+      { cat: 'Image Captioning', text:'Abstract Scenes dataset', conf:'CVPR 2013',
+        url:'https://vision.ece.vt.edu/clipart/', 
+        x: 0.5, y: 1.5, z: 0.1, style: 2013, filter:2 },
+      { cat: 'Visual Question Answering', text: 'CLEVR dataset', conf:'CVPR 2017', 
+        url: 'https://cs.stanford.edu/people/jcjohns/clevr/',
+        x: 0.5, y: 0.5, z: 0.1, style: 2017, filter:12 },
+      { cat: 'Visual Dialog', text:'VisDial dataset', conf:'CVPR 2017', 
+        url: 'https://visualdialog.org/',
+        x: 1.5, y: 2.5, z: 0.1, style: 2017, filter:13 },
+      { cat: 'Visual Dialog', text: 'GuessWhat?! dataset', conf: 'CVPR 2017',
+        url: 'https://www.guesswhat.ai/',  
+        x: 1.5, y: 2.5, z: 0.2, style: 2017, filter:14 },
+      { cat: 'Vision-and-Language Navigation', text: 'Room-to-Room (R2R) dataset</a> (<a target="_blank" href="https://github.com/niessner/Matterport">Matterport3D</a>)', conf: 'CVPR 2018', 
+        url: 'https://bringmeaspoon.org/',
+        x: 2.5, y: 1.5, z: 1.1, style: 2018, filter:15 },
+      { cat: 'Embodied Question Answering', text: 'Embodied Question Answering dataset</a> (<a target="_blank" href="https://github.com/facebookresearch/House3D">House3D</a> / <a target="_blank" href="http://suncg.cs.princeton.edu/">SUNCG</a>)', conf: 'CVPR 2018',
+        url: 'https://embodiedqa.org/Interactive Question Answering', 
+        x: 2.5, y: 0.5, z: 1.1, style: 2018, filter:16 },
+      { cat: 'Embodied Question Answering', text: 'Interactive Question Answering (IQA) dataset</a> (<a target="_blank" href="https://ai2thor.allenai.org/">AI2-THOR</a>)', conf: 'CVPR 2018', 
+        url: 'https://arxiv.org/abs/1712.03316',
+        x: 2.5, y: 0.5, z: 1.2, style: 2018, filter:17 },
+    ]
+    
+    // Starting view and ending view
+    var text = '';
+    for (var k = 0; k < dataArray.length; k++) {
+      var item = dataArray[k];
+      if (k>0 && (dataArray[k-1].x != item.x || dataArray[k-1].y != item.y)) {
+        text = '';
+      }
+      if (text != '') { text = '<br>' + text; }
+      text = '<b>'+item.cat+':</b> <a target="_blank" href="'+item.url+'">'+item.text+'</a>, '+item.conf + text;
+      if (k+1<dataArray.length && (dataArray[k+1].x == item.x && dataArray[k+1].y == item.y)){
+        data.add([{x:item.x,y:item.y,z:item.z,filter:0,style:item.style,text:false, tooltip:t==item.filter}]);
+        data.add([{x:item.x,y:item.y,z:item.z,filter:dataArray.length+1,style:item.style,text:false, tooltip:t==item.filter}]);
+      } else {
+        data.add([{x:item.x,y:item.y,z:item.z,filter:0,style:item.style,text:text, tooltip:t==item.filter}]);
+        data.add([{x:item.x,y:item.y,z:item.z,filter:dataArray.length+1,style:item.style,text:text, tooltip:t==item.filter}]);
+      }
+    }
+    
+    for (var k = 0; k < dataArray.length; k++) {
+      var item = dataArray[k];
+      for (var t = item.filter; t <= dataArray.length; t++) {
+        var text = '<b>'+item.cat+'</b><br><a target="_blank" href="'+item.url+'">'+item.text+'</a>, '+item.conf;
+        data.add([
+          {x:item.x,y:item.y,z:item.z,filter:t,style:item.style,text:text, tooltip:t==item.filter}
+        ]);
+      }
+    }
+    
+
+    // specify options
+    var options = {
+      width:  '800px',
+      height: '600px',
+      style: 'dot-color',
+      showPerspective: true,
+      animationInterval: 1000, // milliseconds
+      animationPreload: true,
+      animationAutoStart: false,
+      showGrid: true,
+      keepAspectRatio: true,
+      verticalRatio: 0.8,
+      legendLabel: 'Year',
+      cameraPosition: {
+        horizontal: 0.65,
+        vertical: 0.2,
+        distance: 2.2
+      },
+      filterLabel: 'Evolution of Language and Vision datasets towards Actions',
+      dotSizeRatio: 0.05,
+      showShadow: true,
+      xMin: 0,
+      xMax: 3,
+      xStep: 1,
+      xLabel: 'Vision',
+      yMin: 0,
+      yMax: 3,
+      yStep: 1,
+      yLabel: 'Language',
+      zMin: 0,
+      zMax: 3,
+      zStep: 1,
+      zLabel: 'Actions',
+      xValueLabel: function (x) { // vision
+        switch(x) {
+          case 0: return 'Synthetic Images'; break; 
+          case 1: return 'Natural Images'; break; 
+          case 2: return 'Video'; break; 
+        } 
+      },
+      yValueLabel: function (x) { // language
+        switch(x) {
+          case 0: return 'Templates'; break; 
+          case 1: return 'Natural'; break;
+          case 2: return 'Dialog'; break;
+        } 
+      },
+      zValueLabel: function (x) { // actions
+        switch(x) {
+          case 0: return 'None'; break;
+          case 1: return 'Camera Control'; break;
+          case 2: return 'Interaction / Manipulation'; break; 
+        } 
+      },
+      // Option tooltip can be true, false, or a function returning a string with HTML contents
+      tooltip: function (point) {
+        // parameter point contains properties x, y, z, and data
+        // data is the original object passed to the point constructor
+        return point.data.text;
+      },
+
+      // Tooltip default styling can be overridden
+      tooltipStyle: {
+        content: {
+          background    : 'rgba(255, 255, 255, 0.9)',
+          padding       : '10px',
+          borderRadius  : '10px'
+        },
+        line: {
+          borderLeft    : '1px dotted rgba(0, 0, 0, 0.5)'
+        },
+        dot: {
+          border        : '5px solid rgba(0, 0, 0, 0.5)'
+        }
+      },
+    };
+          
+    // create our graph
+    var container = document.getElementById('mygraph');
+    graph = new vis.Graph3d(container, data, options);
+    
+  }
+</script>
+
+<div>
+  <div id="mygraph"></div>
+</div>
+

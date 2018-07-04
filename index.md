@@ -24,6 +24,12 @@ environments that can be used for these (such as House3D, HoME,
 MINOS, Matterport3D Simulator, Gibson, Thor &amp; Chalet).
 </p>
 
+{% include tasks.html %}
+
+## Materials
+
+Slides will be posted here immediately after the tutorial.
+
 ## Presenters
 
 <table class='organizer-pics-four'>
