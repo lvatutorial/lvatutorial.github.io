@@ -46,7 +46,7 @@ Slides will be posted here immediately after the tutorial.
     </tr>
     <tr>
         <td><a href='http://www.panderson.me/'>Peter Anderson</a> <br>
-        Australian National University</td>
+        Australian National University / Macquarie University</td>
 
         <td><a href='https://abhishekdas.com'>Abhishek Das</a> <br>
         Georgia Tech </td>
