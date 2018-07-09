@@ -34,13 +34,13 @@
         x: 1.5, y: 1.5, z: 0.7, style: 2017, filter:11 },
       { cat: 'Video Description', text: 'MPII Movie Description dataset', conf: 'CVPR 2015', 
         url: 'https://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/research/vision-and-language/mpii-movie-description-dataset/',
-        x: 2.5, y: 1.5, z: 0.1, style: 2015, filter:7 },
+        x: 3.5, y: 1.5, z: 0.1, style: 2015, filter:7 },
       { cat: 'Video Question Answering', text: 'Movie QA dataset', conf: 'CVPR 2016',
         url: 'http://movieqa.cs.toronto.edu/home/',  
-        x: 2.5, y: 1.5, z: 0.2, style: 2016, filter:8 },
+        x: 3.5, y: 1.5, z: 0.2, style: 2016, filter:8 },
       { cat: 'Video Description', text: 'MSR-VTT dataset', conf: 'CVPR 2016',
         url: 'https://www.microsoft.com/en-us/research/publication/msr-vtt-a-large-video-description-dataset-for-bridging-video-and-language/',  
-        x: 2.5, y: 1.5, z: 0.3, style: 2016, filter:9 },
+        x: 3.5, y: 1.5, z: 0.3, style: 2016, filter:9 },
       { cat: 'Image Captioning', text:'Abstract Scenes dataset', conf:'CVPR 2013',
         url:'https://vision.ece.vt.edu/clipart/', 
         x: 0.5, y: 1.5, z: 0.1, style: 2013, filter:2 },
@@ -53,15 +53,15 @@
       { cat: 'Visual Dialog', text: 'GuessWhat?! dataset', conf: 'CVPR 2017',
         url: 'https://www.guesswhat.ai/',  
         x: 1.5, y: 2.5, z: 0.2, style: 2017, filter:14 },
-      { cat: 'Vision-and-Language Navigation', text: 'Room-to-Room (R2R) dataset</a> (<a target="_blank" href="https://github.com/niessner/Matterport">Matterport3D</a>)', conf: 'CVPR 2018', 
-        url: 'https://bringmeaspoon.org/',
-        x: 2.5, y: 1.5, z: 1.1, style: 2018, filter:15 },
       { cat: 'Embodied Question Answering', text: 'Embodied Question Answering dataset</a> (<a target="_blank" href="https://github.com/facebookresearch/House3D">House3D</a> / <a target="_blank" href="http://suncg.cs.princeton.edu/">SUNCG</a>)', conf: 'CVPR 2018',
         url: 'https://embodiedqa.org/Interactive Question Answering', 
         x: 2.5, y: 0.5, z: 1.1, style: 2018, filter:16 },
-      { cat: 'Embodied Question Answering', text: 'Interactive Question Answering (IQA) dataset</a> (<a target="_blank" href="https://ai2thor.allenai.org/">AI2-THOR</a>)', conf: 'CVPR 2018', 
+      { cat: 'Vision-and-Language Navigation', text: 'Room-to-Room (R2R) dataset</a> (<a target="_blank" href="https://github.com/niessner/Matterport">Matterport3D</a>)', conf: 'CVPR 2018', 
+        url: 'https://bringmeaspoon.org/',
+        x: 3.5, y: 1.5, z: 1.1, style: 2018, filter:15 },
+      { cat: 'Interactive Question Answering', text: 'Interactive Question Answering (IQA) dataset</a> (<a target="_blank" href="https://ai2thor.allenai.org/">AI2-THOR</a>)', conf: 'CVPR 2018', 
         url: 'https://arxiv.org/abs/1712.03316',
-        x: 2.5, y: 0.5, z: 1.2, style: 2018, filter:17 },
+        x: 2.5, y: 0.5, z: 2.1, style: 2018, filter:17 },
     ]
     
     // Starting view and ending view
@@ -107,15 +107,15 @@
       verticalRatio: 0.8,
       legendLabel: 'Year',
       cameraPosition: {
-        horizontal: 0.65,
-        vertical: 0.2,
+        horizontal: 0.4,
+        vertical: 0.1,
         distance: 2.2
       },
       filterLabel: 'Evolution of Language and Vision datasets towards Actions',
       dotSizeRatio: 0.05,
       showShadow: true,
       xMin: 0,
-      xMax: 3,
+      xMax: 4,
       xStep: 1,
       xLabel: 'Vision',
       yMin: 0,
@@ -130,7 +130,8 @@
         switch(x) {
           case 0: return 'Synthetic Images'; break; 
           case 1: return 'Natural Images'; break; 
-          case 2: return 'Video'; break; 
+          case 2: return 'Synthetic Video'; break; 
+          case 3: return 'Natural Video'; break; 
         } 
       },
       yValueLabel: function (x) { // language
