@@ -38,7 +38,7 @@ Slides will be posted here immediately after the tutorial.
         <img width="200" class='im-speaker-pic' src='images/peter.jpg' alt='peter'>
         </td>
         <td>
-        <img width="200" class='im-speaker-pic' src='images/abhishek.jpg' alt='abhishek'>
+        <img width="200" class='im-speaker-pic' src='images/abhishek2.jpg' alt='abhishek'>
         </td>
         <td>
         <img width="200" class='im-speaker-pic' src='images/qi.jpg' alt='qi'>
