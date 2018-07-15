@@ -32,7 +32,7 @@ MINOS, Matterport3D Simulator, Gibson, Thor &amp; Chalet).
 - [Peter] **Neural Building Blocks**
     + CNNs and RNNs; captioning, VQA [[pptx][blocks]]
     + Attention mechanisms [[pptx][attention]]
-- [Qi] **Neural Building Blocks (continued) and Tricks** [slides coming soon]
+- [Qi] **Neural Building Blocks (continued) and Tricks** [[pptx][p2]]
     + Multi-modal Pooling
     + Dynamic Network Composition
     + External Knowledge / Memory
@@ -76,6 +76,7 @@ MINOS, Matterport3D Simulator, Gibson, Thor &amp; Chalet).
 [intro]: https://drive.google.com/open?id=1THAdQjpONm_jwuJ349TZvXJoFbXrfIln
 [blocks]: https://drive.google.com/open?id=1ZMw5GHAYrQfNXy2v06rU3K6GxHixXXSN
 [attention]: https://drive.google.com/open?id=1Cgr4BuOkSGNiqEhLB5yPNWd4Wp3AwZYu
+[p2]: https://drive.google.com/open?id=11xi9_kVyDObJynsw8N5qefkoNqSho49d
 [rl.key]: https://drive.google.com/open?id=1s67Y5rc8RYTD4WGvUg05KAQ3VYiNdPEy
 [rl.pdf]: https://drive.google.com/open?id=1CljRRNuKs2ekUt7RArAoCCe0htUmnPpE
 [embodied_1.key]: https://drive.google.com/open?id=1uvSg5rY98qtNu-veylfrZ-jsG9vovmoX
