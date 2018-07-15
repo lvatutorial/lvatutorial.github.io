@@ -30,7 +30,7 @@ MINOS, Matterport3D Simulator, Gibson, Thor &amp; Chalet).
 
 - [Peter] **Introduction** [[pptx][intro]]
 - [Peter] **Neural Building Blocks**
-    + CNNs and RNNs; captioning, VQA, visual dialog [[pptx][blocks]]
+    + CNNs and RNNs; captioning, VQA [[pptx][blocks]]
     + Attention mechanisms [[pptx][attention]]
 - [Qi] **Neural Building Blocks (continued) and Tricks** [slides coming soon]
     + Multi-modal Pooling
