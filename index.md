@@ -26,9 +26,26 @@ MINOS, Matterport3D Simulator, Gibson, Thor &amp; Chalet).
 
 {% include tasks.html %}
 
-## Materials
+## Slides
 
-Slides will be posted here immediately after the tutorial.
+- [Peter] **Introduction** [[pptx][intro]]
+- [Peter] **Neural Building Blocks**
+    + CNNs and RNNs; captioning, VQA, visual dialog [[pptx][blocks]]
+    + Attention mechanisms [[pptx][attention]]
+- [Qi] **Neural Building Blocks (continued) and Tricks** [slides coming soon]
+    + Multi-modal Pooling
+    + Dynamic Network Composition
+    + External Knowledge / Memory
+    + Engineering Tricks
+- [Abhishek] **Reinforcement Learning in Language & Vision** [[keynote][rl.key]] [[pdf][rl.pdf]]
+    + Train/test discrepancy in language generation
+    + Optimizing for metrics
+    + Adversarial training
+    + Downstream task-based training & evaluation
+- **Embodied Agents & Environments**
+    + [Abhishek] Introduction and EmbodiedQA [[keynote][embodied_1.key]] [[pdf][embodied_1.pdf]]
+    + [Peter] Vision-Language Navigation [[pptx][vln]]
+    + [Abhishek] Comparing environments, and next steps [[keynote][embodied_3.key]] [[pdf][embodied_3.pdf]]
 
 ## Presenters
 
@@ -55,3 +72,14 @@ Slides will be posted here immediately after the tutorial.
         The University of Adelaide</td>
     </tr>
 </table>
+
+[intro]: https://drive.google.com/open?id=1THAdQjpONm_jwuJ349TZvXJoFbXrfIln
+[blocks]: https://drive.google.com/open?id=1ZMw5GHAYrQfNXy2v06rU3K6GxHixXXSN
+[attention]: https://drive.google.com/open?id=1Cgr4BuOkSGNiqEhLB5yPNWd4Wp3AwZYu
+[rl.key]: https://drive.google.com/open?id=1s67Y5rc8RYTD4WGvUg05KAQ3VYiNdPEy
+[rl.pdf]: https://drive.google.com/open?id=1CljRRNuKs2ekUt7RArAoCCe0htUmnPpE
+[embodied_1.key]: https://drive.google.com/open?id=1uvSg5rY98qtNu-veylfrZ-jsG9vovmoX
+[embodied_1.pdf]: https://drive.google.com/open?id=1G9TMQT6Rx-ekTO0w30iYd8yS4noDw3Nw
+[vln]: https://drive.google.com/open?id=15QmLgcndu4bYMCxVpEA8EcvEEDILVmmq
+[embodied_3.key]: https://drive.google.com/open?id=1KMCY2PDLs99DCEdfwSmIwBpeXNs68n79
+[embodied_3.pdf]: https://drive.google.com/open?id=1NuX64KqJPBrzcfk83MXQcAnwhTo68DRt
